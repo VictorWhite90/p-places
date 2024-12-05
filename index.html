@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wells Carlton Hotel & Apartments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="gpt.css">
+    <style>
+        .header {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        .ratings {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .ratings div {
+            text-align: center;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar a {
+            color: white;
+        }
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+        .logo {
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 0;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 15px;
+        }
+        .booking-bar {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .features {
+            background-color: #513901aa;
+            color: white;
+            width: 50%;
+            height: 20em;
+    
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .features ul{
+            font-size: 13px;
+        }
+        .features .book{
+            background-color: white;
+            width: 85%;
+            height: 3em;
+            text-align: center;
+           
+        }
+        .book button{
+            border: none;
+            background-color: white;
+            color: black;
+          
+            font-size: small;
+            width: 100%;
+            height: 100%;
+         
+        }
+        .book button a{
+            text-decoration: none;
+            color: black;
+           
+        }
+        .features .book:hover{
+            
+            background-color: #5139015c;
+            border: 1px solid white;
+            
+        }
+        .features .book:hover button{
+            background-color: #51390100;
+        }
+        .thumbnails {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .thumbnails img {
+            cursor: pointer;
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border: 2px solid transparent;
+        }
+        .thumbnails img:hover {
+            border: 2px solid #007bff;
+        }
+
+
+
+        /* Grid container */
+        .room-details-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+        gap: 10px; /* Space between items */
+        padding: 20px;
+        background-color:  white; /* Light background */
+        border: 1px solid #ddd; /* Optional border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
+        }
+
+            /* Grid items */
+            .grid-item {
+            padding: 10px;
+            background-color: #ffffff; /* Item background */
+
+            text-align: center; /* Center the text */
+            font-size: 13px; /* Adjust text size */
+            color: #333; /* Text color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for items */
+            }
+
+            /* Responsive design for smaller screens */
+            @media (max-width: 768px) {
+            .room-details-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+            }
+            }
+
+            @media (max-width: 480px) {
+            .room-details-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+            }
+
+
+            /* text grid */
+            .description-tex-grid{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+                gap: 10px; /* Space between items */
+             
+            }
+
+
+            .description{
+                
+            }
+            .description-direct{
+                width: 19rem;
+                padding: 4px;
+                justify-content: center;
+                text-align: center;
+                height: 14em;
+                background-color: rgba(156, 156, 156, 0.188);
+            }
+
+
+            .regular-plan-grid{
+                display: grid;
+                grid-template-columns: repeat(7, 1fr); /* seven equal columns */
+                gap: 10px; /* Space between items */
+            }
+
+            .strong{
+                text-decoration: underline;
+            }
+
+            .hair-dryer-icon i {
+                font-size: 24px; /* Adjust icon size */
+                color: #ff4081; /* Optional color */
+                margin-right: 8px; /* Spacing from the text */
+            }
+            
+
+            .air-conditioner-icon i {
+                 font-size: 24px; /* Adjust icon size */
+                color: #00bcd4; /* Cool blue color */
+                margin-right: 8px; /* Space between icon and text */
+            }
+
+            
+
+            .wine-glass-icon i {
+                font-size: 24px; /* Adjust icon size */
+                color: #504f4f; /* Wine red color */
+                margin-right: 8px; /* Space between icon and text */
+                
+            }
+
+
+
+
+
+
+            /* foootter */
+
+
+
+            footer {
+      background-color: #d1e9eb;
+      
+      color: #333;
+      height: 33em;
+    }
+
+    .footer h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #000;
+      justify-content: start;
+      padding: 20px 10px;
+    }
+
+    .footer .btn {
+      background-color: #6c5236;
+      color: #fff;
+      border: none;
+      font-size: 14px;
+    }
+
+    .footer .btn:hover {
+      background-color: #523f2a;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #6c5236;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer ul li {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <header class="header container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo" style="width: 189px;">
+                <img src="images/logoII (1).png" alt="The Wells Carlton Logo" style="height: 50px; display: block; margin: 0 auto;">
+                <span style="font-weight: bold; display: block; text-align: center;">The Wells Carlton Hotel & Apartments</span>
+            </div>
+            <div class="contact-info d-flex justify-content-between w-50 p-2">
+                <div class="contact-info-location w-50">
+                    <p><i class="fas fa-map-marker-alt"></i> #8 Gado Nasko Close, Off Jose Marti Str, Asokoro, Abuja, Nigeria 46 km from Abuja Int'l Airport</p>
+                </div>
+               
+                <div class="contact-info-call">
+                    <p><i class="fas fa-phone"></i> +234 908 187 9231</p>
+                    <p><i>+234 817 229 4128</i></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:reservations@wellscarlton.com">reservations@wellscarlton.com</a></p>
+                </div>
+             
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-nav sticky-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">Wells Carlton</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Rooms.html">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mt-5">
+        <h1 class="text-center">Apartment</h1>
+        <div class="booking-bar d-flex justify-content-between align-items-center sticky-navs">
+            <input type="date" class="form-control w-25" placeholder="Check In">
+            <input type="date" class="form-control w-25" placeholder="Check Out">
+            <select class="form-select w-25">
+                <option>Adults</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <button class="btn btn-primary w-25">Check Rooms</button>
+        </div>
+
+        <div id="roomCarousel" class="carousel slide mt-4  m-auto w-75" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/AP3-845x563.jpg.webp" class="d-block w-80%" alt="Room 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/AP5-845x563.jpg.webp" class="d-block w-80%" alt="Room 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/AP2-845x563.jpg.webp" class="d-block w-80%" alt="Room 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/AP4-845x563.jpg.webp" class="d-block w-80%" alt="Room 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        
+
+        <div class="thumb-section p-2 m-auto mt-3" style="width: 52rem;">
+
+            <div class="thumbnails  justify-content-between p-2 m-auto mt-3">
+
+                <div class="thum-images d-flex bg-white w-75 ">
+                    
+                    <div class="IMG-content2">
+                        <img src="images/AP2-845x563.jpg.webp" alt="Room 2" onclick="changeCarouselImage(1)">
+                    </div>
+                  
+                    <div class="IMG-content2">
+                        <img src="images/AP3-845x563.jpg.webp" alt="Room 2" onclick="changeCarouselImage(1)">
+                    </div>
+                    <div class="IMG-content3">
+                        <img src="images/AP4-845x563.jpg.webp" alt="Room 3" onclick="changeCarouselImage(2)">
+                    </div>
+                    <div class="IMG-content4">
+                        <img src="images/AP5-845x563.jpg.webp" alt="Room 3" onclick="changeCarouselImage(2)">
+                    </div>
+                   
+                    
+                </div>
+             
+    
+    
+                <div class="features">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Access to secured elevator</li>
+                        <li>Complimentary breakfast</li>
+                        <li>Free internet access</li>
+                        <li>Stunning city views</li>
+                    </ul>
+
+
+                    <p class="text-center " style="font-size: 2.5em;">₦1,000,000</p>
+                    <div class="book m-auto">
+
+                        <button class=""><a href="">Book Now</a></button>
+                    </div>
+                    
+                    <p class="text-center" style="font-size: small;">Best Choice - Low Price Guarantee</p>
+                </div>
+    
+            </div>
+            
+
+        </div>
+     
+
+
+
+
+        <div class="room-details-grid">
+            <div class="grid-item">
+                <p>Room size</p>
+                <strong>57m²</strong>
+            </div>
+            <div class="grid-item">
+                <p>Sleeps</p>
+                <strong>8 guess</strong>
+            </div>
+            <div class="grid-item">
+                <p>Bed size</p>
+                <strong>King Size</strong> 
+            </div>
+            <div class="grid-item">
+                <p>Bathrooms</p>
+                <strong> 1 per Room</strong>
+            </div>
+          </div>
+          
+
+
+          <div class="description d-flex mt-5 p-4 justify-content-between" style="width: 61rem;">
+
+            <div class="description-text" style="width: 35rem;font-size: 14px ;">
+                <div class="description-header">
+                    <h3>Room Details</h3>
+                </div>
+
+
+
+                <div class="description-tex-para">
+                    <div class="description-tex-para1">
+                        <p>The Wells Carlton Apartment is tastefully furnished 3 bedroom, a spacious living room and butler room with a massage chair, a dining table for six.</p>
+                    </div>
+
+                    <div class="description-tex-para2">
+                        <P>This beautiful apartment is en-suited with bathroom per room, Guest restroom and fully fitted kitchen.</P>
+                        <P>The kitchen has been provided with a dishwasher, a washing machine and dryer (for your clothes).</P>
+                    </div>
+
+                    <div class="description-tex-para3">
+                        <P>The apartment is also attached with a 24 hours butler services and a nanny and chef on request. </P>
+                    </div>
+
+                    <div class="description-tex-para4">
+                        <P>For your luxury and comfort, each room comes with:</P>
+                    </div>
+
+
+
+
+                    <div class="description-tex-grid">
+
+                        <div class="description-tex-grid-item">
+                            <ul>
+                                <li>Bathrobes and Slippers</li>
+                                <li>Hairdryer</li>
+                                <li>Refrigerator</li>
+                                <li>Marble Bathroom</li>
+                                <li>Safety Deposit Box (Large enough for a Laptop)</li>
+                            </ul>
+                        </div>
+
+                        
+
+
+
+
+
+                        <div class="description-tex-grid-item">
+                            <li>Air Conditioning</li>
+                            <li> Marble Desk and Chair</li>
+                            <li> A Minibar</li>
+                            <li>Free High-Speed Wi-Fi</li>
+                            <li>24 Hours Room Service</li>
+                        </div>
+                        
+                       
+                       
+                        
+                        
+
+                        <div class="description-tex-grid-item">
+                            <li> Flat-Screen Smart TV</li>
+                            <li>Local and Intl. Channels</li>
+                            <li>Complimentary Water</li>
+                            <li>Dry-Cleaning Services</li>
+                            <li>Bathroom Toiletries & Luxury Kits</li>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="description-direct ">
+                <div class="description-direct-content">
+                    <div class="Direct-reservations">
+                        <h3>Direct Reservations</h3>
+                    </div>
+
+
+                    <div class="Direct-Reservations-contact mt-4 text-center">
+                        <p><i class="fas fa-phone"></i>+234 908 756 1269</p>
+                        <p><a href="">reservations@wellscarlton.com</a></p>
+                    </div>
+
+                    <button class="m-2 border-0" style="background-color: #513901aa;">
+                        <H4>? Ask any question</H4>
+                    </button>
+                </div>
+            </div>
+
+          </div>
+
+
+          <div class="regular-plan w-75 m-3">
+            <div class="regular-pllan-headeer">
+                <h3>Regular plan</h3>
+            </div>
+
+
+
+            <div class="regular-plan-grid lh-lg">
+                <div class="regular-plan-grid-content">
+
+                    <div class="strong">
+                        <strong>Mon</strong>
+                    </div>
+                    <p>₦1,000,000	</p>
+                </div>
+
+                <div class="regular-plan-grid-content">
+
+                    <div class="strong">
+                        <strong>Tues</strong>
+                    </div>
+                   
+                    <p>₦1,000,000	</p>
+                </div>
+
+                <div class="regular-plan-grid-content">
+
+                    <div class="strong">
+                        <strong>Wed</strong>
+                    </div>
+                   
+                    <p>₦1,000,000	</p>
+                </div>
+
+                <div class="regular-plan-grid-content">
+
+
+                    <div class="strong">
+                        <strong>Thurs</strong>
+                    </div>
+                   
+                    <p>₦1,000,000	</p>
+                </div>
+
+                <div class="regular-plan-grid-content">
+
+                    <div class="strong">
+                        <strong>Fri</strong>
+                    </div>
+                   
+                    <p>₦1,000,000	</p>
+                </div>
+
+                <div class="regular-plan-grid-content">
+
+                    <div class="strong">
+                        <strong>Sat</strong>
+                    </div>
+                   
+                    <p>₦1,000,000	</p>
+                </div>
+
+                <div class="regular-plan-grid-content">
+
+                    <div class="strong">
+                        <strong>Sud</strong>
+                    </div>
+                    
+                    <p>₦1,000,000	</p>
+                </div>
+            </div>
+          </div>
+        
+
+
+
+          <!-- room feautures -->
+
+
+          <div class="room-feautures d-flex">
+
+            <div class="room-feautures-content">
+                <div class="room-feautures-header">
+                
+                    <h4>Room Features</h4>
+                </div>
+
+                <div class="room-feautures-content-para">
+                    <p>Breakfast: free</p>
+                    <p>Safe: YES</p>
+                    <p>Lift: NO</p>
+                    <p>TV: YES</p>
+                    <p>View: Center of City</p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="room-feautures-icon m-auto d-flex w-50 justify-content-between align-items-center ">
+
+                <div class="room-feautures-icon-1">
+                    <i class="fas fa-wifi"></i>
+                    <p>Free wifi:</p>
+                    <p>YES</p>
+                </div>
+                
+
+                <div class="room-feautures-icon-2">
+
+                    <div class="hair-dryer-icon">
+                        <i class="fas fa-wind"></i> 
+                        <p>Hair Dryer</p>
+                    </div>
+                    
+
+                </div>
+
+                
+                <div class="room-feautures-icon-3">
+                    <div class="air-conditioner-icon">
+                        <i class="fas fa-snowflake"></i> 
+                        <p>Air Conditioner</p>
+                    </div>
+                
+
+                </div>
+
+                
+                <div class="room-feautures-icon-4">
+
+                    <div class="wine-glass-icon">
+                        <i class="fas fa-wine-glass"></i> 
+                        <p>minibar</p>
+                    </div>
+                    
+
+                </div>
+    
+
+            </div>
+
+
+           
+  
+          </div>
+
+
+    </section>
+
+
+    <!-- footer -->
+
+  
+
+
+
+
+  <footer class="footer mt-5">
+    <div class="container d-flex">
+    
+        <!-- Locate Us Section -->
+        <div class=" bg-white mt-4 col-lg-3 col-md-6 mb-4" style="height: 30em; width: 33%;">
+            <div class="locate-content p-3 m-auto" style="height: 27em; width: 90%;">
+                <h3 style="font-size: 30px;">Locate Us</h3>
+                <button class="btn btn-sm w-50"  style="height: 10%;">View on Map</button>
+
+                <h2 class="mt-5">Places Near by</h2>
+                <ul class="mt-3">
+                  <li>1. H-Medix Pharmacy - 1.7 km, 4 Minutes Drive</li>
+                  <li>2. Ecowas - 1.5 km, 4 Minutes Drive</li>
+                  <li>3. World Bank - 1.8 km, 4 Minutes Drive</li>
+                  <li>4. Littlemates Park - 6.0 km, 14 Minutes Drive</li>
+                </ul>
+            </div>
+         
+        </div>
+        
+        <!-- About Us Section -->
+        <div class="col-lg-3 col-md-6 p-5 mb-4 d w-75 j">
+
+            <div class="calton-desp d-flex justify-content-between m-auto" style="font-size: smaller;  width: 80%; ">
+
+                <div class="calton-desp-img">
+                    <img src="images/logoII (1).png" alt="The Wells Carlton Logo" class="img-fluid mb-3" style="max-width: 120px;">
+                </div>
+               
+
+
+                <div class="calton-desp-p w-75">
+                    <p>
+                        The Wells Carlton Hotel & Apartments is a beautiful, fantasy-like journey into a glamorous world of pure
+                        luxury, privacy, exceptional service, and gratifying indulgence. It is located in one of the most secured
+                        and serene locations in Abuja.</p>
+                </div>
+               
+            </div>
+          
+    
+
+        <!-- Connect With Us Section -->
+
+        <div class="connet-sec d-flex justify-content-between m-auto" style="height: 15em;">
+            <div class="">
+                <h3>Connect With Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 8 Gado Nasko Close, Off Jose Marti Str., Asokoro, Abuja.</p>
+                <p><i class="fas fa-phone"></i> +234 908 187 9231</p>
+                <p><i class="fas fa-envelope"></i> reservations@wellscarlton.com</p>
+                <p>© 2022 The Wells Carlton Hotel & Apartment. Privacy Policy</p>
+              </div>
+      
+              <!-- Useful Links Section -->
+              <div class="">
+                <h3>Useful Links</h3>
+                <ul>
+                  <li><a href="#">Restaurant Menu</a></li>
+                  <li><a href="#">Employee Portal</a></li>
+                  <li><a href="#">Tirtaayu SPA</a></li>
+                </ul>
+                <div class="social-icons mt-3">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-google-plus"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeCarouselImage(index) {
+            const carousel = document.querySelector('#roomCarousel');
+            const carouselInstance = bootstrap.Carousel.getInstance(carousel);
+            carouselInstance.to(index);
+        }
+    </script>
+</body>
+</html>
