@@ -45,169 +45,229 @@
             border-radius: 5px;
             margin-top: 20px;
         }
-        .features {
-            background-color: #513901aa;
-            color: white;
-            width: 50%;
-            height: 20em;
+     /* Background container */
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background images */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.background-image.active {
+  opacity: 1;
+}
+
+/* Overlay content */
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* Text container styles */
+.text-container {
+  max-width: 600px; /* Adjust as needed */
+  text-align: center;
+}
+
+   
+    /* Carousel Container */
+    .carousel-container {
+      width: 60%;
+      max-width: 1200px;
+      height: 30rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+      height: 70vh; /* Ensure full screen height */
+      margin: 0rem auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-item img {
+      margin: 0 auto;
+    }
+
+    /* Caption on the Left */
+    .carousel-caption-left {
+      position: absolute;
+      top: 34%;
+      left: 20%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 35%;
+      z-index: 2;
+      margin-top: 6rem;
+    }
+
+    .carousel-caption-left h3 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .carousel-caption-left p {
+      font-size: 1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .carousel-caption-left a {
+      text-decoration: none;
+      color: #fff;
+      background: #007bff;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
     
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .features ul{
-            font-size: 13px;
-        }
-        .features .book{
-            background-color: white;
-            width: 85%;
-            height: 3em;
-            text-align: center;
-           
-        }
-        .book button{
-            border: none;
-            background-color: white;
-            color: black;
-          
-            font-size: small;
-            width: 100%;
-            height: 100%;
-         
-        }
-        .book button a{
-            text-decoration: none;
-            color: black;
-           
-        }
-        .features .book:hover{
-            
-            background-color: #5139015c;
-            border: 1px solid white;
-            
-        }
-        .features .book:hover button{
-            background-color: #51390100;
-        }
-        .thumbnails {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .thumbnails img {
-            cursor: pointer;
-            width: 100px;
-            height: 70px;
-            object-fit: cover;
-            border: 2px solid transparent;
-        }
-        .thumbnails img:hover {
-            border: 2px solid #007bff;
-        }
+  #caption{
+    margin-top: 4r;
+  }
 
 
 
-        /* Grid container */
-        .room-details-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Four equal columns */
-        gap: 10px; /* Space between items */
-        padding: 20px;
-        background-color:  white; /* Light background */
-        border: 1px solid #ddd; /* Optional border */
-        border-radius: 8px; /* Rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
-        }
+    /* Main Carousel */
+    .carousel-inner {
+      width: 70%;
+      margin-left: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #007bff;
+    }
 
-            /* Grid items */
-            .grid-item {
-            padding: 10px;
-            background-color: #ffffff; /* Item background */
+    .carousel-inner img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
-            text-align: center; /* Center the text */
-            font-size: 13px; /* Adjust text size */
-            color: #333; /* Text color */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for items */
-            }
+    /* Carousel Controls */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+      z-index: 10;
+    }
 
-            /* Responsive design for smaller screens */
-            @media (max-width: 768px) {
-            .room-details-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
-            }
-            }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-            @media (max-width: 480px) {
-            .room-details-grid {
-                grid-template-columns: 1fr; /* Single column on very small screens */
-            }
-            }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .carousel-caption-left {
+        width: 90%;
+        left: 5%;
+        transform: translateY(-50%);
+      }
 
+      .carousel-inner {
+        width: 100%;
+        
+      }
+    }
+ 
 
-            /* text grid */
-            .description-tex-grid{
-                display: grid;
-                grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-                gap: 10px; /* Space between items */
-             
-            }
+    /* Rooms Section */
+.rooms {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 4em;
+}
 
+.section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-            .description{
-                
-            }
-            .description-direct{
-                width: 19rem;
-                padding: 4px;
-                justify-content: center;
-                text-align: center;
-                height: 14em;
-                background-color: rgba(156, 156, 156, 0.188);
-            }
+/* Room Cards */
+.room-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
+.room-card {
+  width: 250px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+}
 
-            .regular-plan-grid{
-                display: grid;
-                grid-template-columns: repeat(7, 1fr); /* seven equal columns */
-                gap: 10px; /* Space between items */
-            }
+.room-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
 
-            .strong{
-                text-decoration: underline;
-            }
+.room-details {
+  padding: 15px;
+}
 
-            .hair-dryer-icon i {
-                font-size: 24px; /* Adjust icon size */
-                color: #ff4081; /* Optional color */
-                margin-right: 8px; /* Spacing from the text */
-            }
-            
-           
-            .room-btn{
-                text-decoration: none;
-                color: white;
-            }
+.room-details h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #333;
+}
 
-            .air-conditioner-icon i {
-                 font-size: 24px; /* Adjust icon size */
-                color: #00bcd4; /* Cool blue color */
-                margin-right: 8px; /* Space between icon and text */
-            }
+.room-details p {
+  margin: 5px 0;
+  color: #666;
+}
 
-            
+.price {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #000;
+}
 
-            .wine-glass-icon i {
-                font-size: 24px; /* Adjust icon size */
-                color: #504f4f; /* Wine red color */
-                margin-right: 8px; /* Space between icon and text */
-                
-            }
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
 
-
-
-
-
+.btn:hover {
+  background-color: #555;
+}
+.rare{
+  margin: 0 auto;
+}
+        
 
             /* foootter */
 
@@ -272,16 +332,6 @@
 
     </style>
 
-
-
-
-
-
-
-
-
-
-
 </head>
 <body>
     <header class="header container-fluid">
@@ -307,7 +357,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-nav sticky-nav">
         <div class="container">
-            <a class="navbar-brand" href="#">Wells Carlton</a>
+            <a class="navbar-brand" href="#"> Pleasant Places</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -326,8 +376,29 @@
         </div>
     </nav>
 
+    <div class="container-fluid p-0">
+        <!-- Background Container -->
+        <div class="background-container">
+          <div class="background-image active" style="background-image: url('images/hotel\ bg1.jpg');"></div>
+          <div class="background-image" style="background-image: url('images/hotel\ bg\ 2.webp');"></div>
+          <div class="background-image" style="background-image: url('images/hotel\ bg\ 3.jpg');"></div>
+          <div class="background-image" style="background-image: url('images/hotel\ bg\ 4.jpg');"></div>
+          <div class="background-image" style="background-image: url('images/hotel\ bg\ 6.jpg');"></div>
+        </div>
+    
+        <!-- Overlay Content -->
+        <div class="overlay-content d-flex justify-content-center align-items-center">
+          <div class="text-container bg-dark bg-opacity-75 text-white rounded p-4 justify-content-center align-items-center ">
+            <h1 class="text-center">Welcome to Pleasant Places</h1>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      
     <section class="container mt-5">
-        <h1 class="text-center">Apartment</h1>
         <div class="booking-bar d-flex justify-content-between align-items-center sticky-navs">
             <input type="date" class="form-control w-25" placeholder="Check In">
             <input type="date" class="form-control w-25" placeholder="Check Out">
@@ -337,362 +408,187 @@
                 <option>2</option>
                 <option>3</option>
             </select>
-            <button class="btn btn-primary w-25"><a href="Rooms.html" class="room-btn">Check Rooms</a></button>
+            <button class="btn btn-primary w-25"><a href="Rooms.html" class="room-btn text-light" style="text-decoration: none;">Check Rooms</a></button>
         </div>
+    </section>
 
-        <div id="roomCarousel" class="carousel slide mt-4  m-auto w-75" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/AP3-845x563.jpg.webp" class="d-block w-80%" alt="Room 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/AP5-845x563.jpg.webp" class="d-block w-80%" alt="Room 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/AP2-845x563.jpg.webp" class="d-block w-80%" alt="Room 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/AP4-845x563.jpg.webp" class="d-block w-80%" alt="Room 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
+
+
+
+    <section class="rooms">
+      <h1 class="section-title">Rooms & Rates</h1>
+      <div class="room-cards">
+          <!-- Deluxe Room -->
+          <div class="room-card">
+              <img src="images/WhatsApp Image 2024-12-03 at 14.58.12_f113bb9c.jpg" alt="Deluxe Room">
+              <div class="room-details">
+                  <h2>Deluxe</h2>
+                  <p>Room size: 42 m²</p>
+                  <p class="price">₦200,000</p>
+                  <button class="btn"><a href="Rooms.html">Know More</a></button>
+              </div>
+          </div>
+          <!-- Standard Room -->
+          <div class="room-card">
+              <img src="images/WhatsApp Image 2024-12-03 at 14.58.12_18b2a0c8.jpg" alt="Standard Room">
+              <div class="room-details">
+                  <h2>Standard</h2>
+                  <p>Room size: 30 - 38 m²</p>
+                  <p class="price">₦170,000</p>
+                  <button class="btn"><a href="Rooms.html">Know More</a></button>
+              </div>
+          </div>
+          <!-- Penthouse -->
+          <div class="room-card">
+              <img src="images/WhatsApp Image 2024-12-03 at 14.58.13_7e1a17ee.jpg" alt="Penthouse">
+              <div class="room-details">
+                  <h2>Penthouse I</h2>
+                  <p>Room size: 125 m²</p>
+                  <p class="price">₦2,500,000</p>
+                  <button class="btn"><a href="Rooms.html">Know More</a></button>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <h1 class="perfect text-center m-5">The Perfect Stay, Guaranteed
+    </h1>
+
+    
+    <div class="HOTEL-services d-flex m-auto " style="background-color: #70e3f51f; height: 410px;font-size: small; width: 63%; ">
+      <div class="HOTEL-services-text text-start mt-5 p-2">
+        <div class="HOTEL-services-header">
+          <h3>Hotel Features</h3>
         </div>
-
-        
-
-        <div class="thumb-section p-2 m-auto mt-3" style="width: 52rem;">
-
-            <div class="thumbnails  justify-content-between p-2 m-auto mt-3">
-
-                <div class="thum-images d-flex bg-white w-75 ">
-                    
-                    <div class="IMG-content2">
-                        <img src="images/AP2-845x563.jpg.webp" alt="Room 2" onclick="changeCarouselImage(1)">
-                    </div>
-                  
-                    <div class="IMG-content2">
-                        <img src="images/AP3-845x563.jpg.webp" alt="Room 2" onclick="changeCarouselImage(1)">
-                    </div>
-                    <div class="IMG-content3">
-                        <img src="images/AP4-845x563.jpg.webp" alt="Room 3" onclick="changeCarouselImage(2)">
-                    </div>
-                    <div class="IMG-content4">
-                        <img src="images/AP5-845x563.jpg.webp" alt="Room 3" onclick="changeCarouselImage(2)">
-                    </div>
-                   
-                    
-                </div>
-             
-    
-    
-                <div class="features">
-                    <h4>Features</h4>
-                    <ul>
-                        <li>Access to secured elevator</li>
-                        <li>Complimentary breakfast</li>
-                        <li>Free internet access</li>
-                        <li>Stunning city views</li>
-                    </ul>
-
-
-                    <p class="text-center " style="font-size: 2.5em;">₦1,000,000</p>
-                    <div class="book m-auto">
-
-                        <button class=""><a href="">Book Now</a></button>
-                    </div>
-                    
-                    <p class="text-center" style="font-size: small;">Best Choice - Low Price Guarantee</p>
-                </div>
-    
+  
+        <div class="Hotel-Features-parag d-flex mt-3">
+  
+          <div class="Hotel-Features-parag-fist">
+  
+            <ul>
+              <li>Check in: 02:00 PM</li>
+              <li>Check out: 12:00 PM</li>
+              <li>Free parking space</li>
+              <li>Group Bookings</li>
+            </ul>
+          </div>
+  
+          <div class="Hotel-Features-parag-second">
+            <ul>
+              <li>Transfer Service</li>
+              <li>Facilities for the Disabled</li>
+              <li>In-Room Dining</li>
+              <li>Group Reservations
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="other-services mt-4">
+  
+          <div class="HOTEL-services-header">
+            <h5>
+              You Can Also Use
+            </h5>
+          </div>
+  
+          <div class="room-feautures-icon d-flex w-50 justify-content-between align-items-center ">
+  
+            <div class="room-feautures-icon-1">
+                <i class="fas fa-wifi"></i>
+                <p>Free wifi:</p>
+               
             </div>
             
-
+            
+            <div class="room-feautures-icon-4">
+  
+                <div class="wine-glass-icon">
+                    <i class="fas fa-wine-glass"></i> 
+                    <p>minibar</p>
+                </div>
+                
+  
+            </div>
+  
+  
         </div>
-     
+         
+        </div>
+      </div>
+  
+      <div class="HOTEL-services-image">
+       <img src="images/hotel-receptionist-assisting-the-guest.jpg" alt="" style="height: 410px;  width: 520px;">
+      </div>
+    </div>
 
 
+    <div class="satisfactory mt-4 text-center">
+      <H2>We give Satisfactory at its best</H2>
+    </div>
+    
+    <div class="carousel-container" >
+      <!-- Caption -->
+       <div class="carousel-container-content ">
 
-
-        <div class="room-details-grid">
-            <div class="grid-item">
-                <p>Room size</p>
-                <strong>57m²</strong>
+        <div class="carousel-caption-left" id="caption">
+          <h3>Pleasant Places</h3>
+          <p>We bring you authentic Javanese Spa treatments with a blend of ancient therapeutic remedies...</p>
+          <a href="#">Know More</a>
+        </div>
+    
+        <!-- Carousel -->
+        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <img src="images/hotel bg 6.jpg" alt="Slide 1">
             </div>
-            <div class="grid-item">
-                <p>Sleeps</p>
-                <strong>8 guess</strong>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <img src="images/hotel bg 2.webp" alt="Slide 2">
             </div>
-            <div class="grid-item">
-                <p>Bed size</p>
-                <strong>King Size</strong> 
-            </div>
-            <div class="grid-item">
-                <p>Bathrooms</p>
-                <strong> 1 per Room</strong>
-            </div>
-          </div>
-          
-
-
-          <div class="description d-flex mt-5 p-4 justify-content-between" style="width: 61rem;">
-
-            <div class="description-text" style="width: 35rem;font-size: 14px ;">
-                <div class="description-header">
-                    <h3>Room Details</h3>
-                </div>
-
-
-
-                <div class="description-tex-para">
-                    <div class="description-tex-para1">
-                        <p>The Wells Carlton Apartment is tastefully furnished 3 bedroom, a spacious living room and butler room with a massage chair, a dining table for six.</p>
-                    </div>
-
-                    <div class="description-tex-para2">
-                        <P>This beautiful apartment is en-suited with bathroom per room, Guest restroom and fully fitted kitchen.</P>
-                        <P>The kitchen has been provided with a dishwasher, a washing machine and dryer (for your clothes).</P>
-                    </div>
-
-                    <div class="description-tex-para3">
-                        <P>The apartment is also attached with a 24 hours butler services and a nanny and chef on request. </P>
-                    </div>
-
-                    <div class="description-tex-para4">
-                        <P>For your luxury and comfort, each room comes with:</P>
-                    </div>
-
-
-
-
-                    <div class="description-tex-grid">
-
-                        <div class="description-tex-grid-item">
-                            <ul>
-                                <li>Bathrobes and Slippers</li>
-                                <li>Hairdryer</li>
-                                <li>Refrigerator</li>
-                                <li>Marble Bathroom</li>
-                                <li>Safety Deposit Box (Large enough for a Laptop)</li>
-                            </ul>
-                        </div>
-
-                        
-
-
-
-
-
-                        <div class="description-tex-grid-item">
-                            <li>Air Conditioning</li>
-                            <li> Marble Desk and Chair</li>
-                            <li> A Minibar</li>
-                            <li>Free High-Speed Wi-Fi</li>
-                            <li>24 Hours Room Service</li>
-                        </div>
-                        
-                       
-                       
-                        
-                        
-
-                        <div class="description-tex-grid-item">
-                            <li> Flat-Screen Smart TV</li>
-                            <li>Local and Intl. Channels</li>
-                            <li>Complimentary Water</li>
-                            <li>Dry-Cleaning Services</li>
-                            <li>Bathroom Toiletries & Luxury Kits</li>
-                        </div>
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="description-direct ">
-                <div class="description-direct-content">
-                    <div class="Direct-reservations">
-                        <h3>Direct Reservations</h3>
-                    </div>
-
-
-                    <div class="Direct-Reservations-contact mt-4 text-center">
-                        <p><i class="fas fa-phone"></i>+234 908 756 1269</p>
-                        <p><a href="">reservations@wellscarlton.com</a></p>
-                    </div>
-
-                    <button class="m-2 border-0" style="background-color: #513901aa;">
-                        <H4>? Ask any question</H4>
-                    </button>
-                </div>
-            </div>
-
-          </div>
-
-
-          <div class="regular-plan w-75 m-3">
-            <div class="regular-pllan-headeer">
-                <h3>Regular plan</h3>
-            </div>
-
-
-
-            <div class="regular-plan-grid lh-lg">
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Mon</strong>
-                    </div>
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Tues</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Wed</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-
-                    <div class="strong">
-                        <strong>Thurs</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Fri</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Sat</strong>
-                    </div>
-                   
-                    <p>₦1,000,000	</p>
-                </div>
-
-                <div class="regular-plan-grid-content">
-
-                    <div class="strong">
-                        <strong>Sud</strong>
-                    </div>
-                    
-                    <p>₦1,000,000	</p>
-                </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <img src="images/hotel bg 4.jpg" alt="Slide 3">
             </div>
           </div>
-        
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+       </div>
+ 
+    </div>
 
 
+    <div class="rare bg-black d-flex justify-content-center align-items-center" style="width: 63%;">
+      <img src="images/rare_dahlia_banner.jpg.webp" alt="" class="img-fluid" style="width: 100%;">
+  </div>
 
-          <!-- room feautures -->
+  <div class="bg-image w-100 bg-black mt-5">
+    <video muted loop autoplay class="w-100" style="height: 300px; object-fit: cover;">
+        <source src="videos/WhatsApp Video 2024-12-06 at 21.30.50_647381cd.mp4" type="video/mp4">
+    </video>
+</div>
 
+<div class="spa d-flex justify-content-center align-items-center">
+  <img src="images/spa_banner.jpg.webp" alt="Spa Banner" class="w-50 mt-4">
+</div>
 
-          <div class="room-feautures d-flex">
-
-            <div class="room-feautures-content">
-                <div class="room-feautures-header">
-                
-                    <h4>Room Features</h4>
-                </div>
-
-                <div class="room-feautures-content-para">
-                    <p>Breakfast: free</p>
-                    <p>Safe: YES</p>
-                    <p>Lift: NO</p>
-                    <p>TV: YES</p>
-                    <p>View: Center of City</p>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="room-feautures-icon m-auto d-flex w-50 justify-content-between align-items-center ">
-
-                <div class="room-feautures-icon-1">
-                    <i class="fas fa-wifi"></i>
-                    <p>Free wifi:</p>
-                    <p>YES</p>
-                </div>
-                
-
-                <div class="room-feautures-icon-2">
-
-                    <div class="hair-dryer-icon">
-                        <i class="fas fa-wind"></i> 
-                        <p>Hair Dryer</p>
-                    </div>
-                    
-
-                </div>
-
-                
-                <div class="room-feautures-icon-3">
-                    <div class="air-conditioner-icon">
-                        <i class="fas fa-snowflake"></i> 
-                        <p>Air Conditioner</p>
-                    </div>
-                
-
-                </div>
-
-                
-                <div class="room-feautures-icon-4">
-
-                    <div class="wine-glass-icon">
-                        <i class="fas fa-wine-glass"></i> 
-                        <p>minibar</p>
-                    </div>
-                    
-
-                </div>
+  
+  
     
 
-            </div>
 
-
-           
-  
-          </div>
-
-
-    </section>
 
 
     <!-- footer -->
@@ -787,5 +683,31 @@
             carouselInstance.to(index);
         }
     </script>
+
+    <script>
+
+const images = document.querySelectorAll('.background-image');
+    let currentIndex = 0;
+  
+    function changeBackground() {
+      // Remove 'active' class from all images
+      images.forEach((img) => img.classList.remove('active'));
+  
+      // Add 'active' class to the current image
+      images[currentIndex].classList.add('active');
+  
+      // Update the index for the next image
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+  
+    // Change the background every 8 seconds
+    setInterval(changeBackground, 8000);
+  
+    // Initialize the first image
+    changeBackground();
+
+    </script>
+
+    
 </body>
 </html>
